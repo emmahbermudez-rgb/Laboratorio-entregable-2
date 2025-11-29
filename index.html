@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Diseñador Gráfico</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    
+     <!-- Barra nav -->
+    <nav>
+        <div class="logo">
+            <img src="IMG/logo_1.png" alt="logo" class="man">
+        </div>
+
+        <div id="nav-toggle">☰</div>
+
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+
+            <li><a href="#acerca">Acerca de</a></li>
+
+            <li class="submenu">
+                <a href="#servicios">Servicios ▾</a>
+                <ul class="submenu-items">
+                    <li><a href="#">Branding</a></li>
+                    <li><a href="#">Diseño Web</a></li>
+                    <li><a href="#">Social Media</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- SECCION Presentacion -->
+
+    <section id="inicio" class="seccion">
+        <h1>Hola, soy Emmanuel — Diseñador Gráfico</h1>
+        <p>Creo marcas, diseños modernos y soluciones visuales para tu empresa.</p>
+    </section>
+
+
+    <!-- SECCION ABOUT ME -->
+    <section id="acerca" class="seccion gris">
+        <h2>Acerca de mí</h2>
+        <p>Soy un diseñador apasionado por crear experiencias visuales que conectan con las personas.</p>
+    </section>
+
+
+    <!-- SECCIÓN SERVICIOS -->
+    <section id="servicios" class="seccion">
+        <h2>Servicios</h2>
+        <ul class="lista-servicios">
+            <li>Branding</li>
+            <li>Diseño Web</li>
+            <li>Social Media</li>
+            <li>Publicidad Digital</li>
+        </ul>
+    </section>
+
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <section id="contacto" class="seccion gris">
+        <h2>Contacto</h2>
+        <form id="formulario-contacto">
+
+            <label>Nombre:</label>
+            <input type="text" required>
+
+            <label>Correo:</label>
+            <input type="email" required>
+
+            <label>Mensaje:</label>
+            <textarea required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <!-- Aquí aparecerá el mensaje -->
+        <p id="mensaje-enviado"></p>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+       <H3>© 2025 Mi Portafolio — ExMAN</H3> 
+    </footer>
+
+
+    <!-- BOTÓN FLOTANTE IR ARRIBA -->
+    <button id="btn-arriba" onclick="scrollToTop()">↑</button>
+
+    <script src="Scripts/script.js"></script>
+</body>
+</html>
