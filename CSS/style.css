@@ -1,0 +1,324 @@
+:root{
+  --nav-height: 64px;
+  --color-bg: #f2f2f2;
+  --nav-bg: #222;
+  --nav-hover: #333;
+  --accent: #6a4c93;
+  --text: #222;
+}
+
+/* --------------------
+   Reset / Global
+   -------------------- */
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    scroll-behavior: smooth;
+    /* IMPORTANTE: dejar espacio arriba para el nav fijo */
+    padding-top: var(--nav-height);
+    background-color: #fff;
+}
+
+/* --------------------
+   Secciones
+   -------------------- */
+.seccion {
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 60vh;
+}
+
+.gris {
+    background-color: var(--color-bg);
+}
+
+/* Titulares y listas */
+h1, h2 {
+    margin: 0 0 16px 0;
+    color: #222;
+}
+.lista-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+.lista-servicios li {
+    background: linear-gradient(180deg,#fff,#f8f8f8);
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* --------------------
+   Barra nav 
+   -------------------- */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color:red;
+    color: white;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    gap: 12px;
+}
+
+/* Logo */
+nav .logo {
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    font-size: 1.05rem;
+}
+
+/* Toggle (hamburguesa) */
+#nav-toggle {
+    display: none;              /* se muestra solo en mobile (media query) */
+    font-size: 22px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+}
+
+/* Lista principal */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+/* Cada elemento */
+nav ul li {
+    position: relative; /* necesario para posicionar submenus */
+}
+
+/* Enlaces */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    display: inline-block;
+    border-radius: 6px;
+    transition: background-color 0.18s;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color:white ;
+    color: black;
+}
+
+
+/* SUBMENÚ PADRE */
+.submenu {
+    position: relative;      /* ← esto es lo que faltaba */
+}
+
+/* SUBMENÚ */ .submenu-items { 
+    display: none; 
+    position: absolute; 
+    background-color: red;
+     padding: 10px; list-style: none;
+     border-radius: 6px; } 
+     
+     .submenu:hover .submenu-items { display: block; }
+
+
+/* --------------------
+   SUBMENÚ (desplegable)
+  
+.submenu-items {
+    display: none;                
+    position: absolute;
+    top: calc(var(--nav-height) - 8px); 
+    left: 0;
+    min-width: 160px;
+    background-color:red;
+    padding: 8px 0;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    z-index: 1100;
+}
+
+
+.submenu-items li {
+    padding: 0;
+    margin: 0;
+}
+.submenu-items li a {
+    color: white;
+    padding: 8px 14px;
+    display: block;
+    text-decoration: none;
+}
+.submenu-items li a:hover {
+    background-color: rgba(255,255,255,0.06);
+}
+
+
+.submenu:hover .submenu-items,
+.submenu:focus-within .submenu-items {
+    display: block;
+}
+-------------------- */
+/* --------------------
+   FORMULARIO
+   -------------------- */
+form {
+    max-width: 420px;
+    margin: 12px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+form label {
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+input, textarea {
+    margin: 0;
+    padding: 10px 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+button[type="submit"] {
+    padding: 12px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+button[type="submit"]:hover { background-color: white;
+color: red; }
+
+/* Mensaje tras enviar */
+#mensaje-enviado {
+    margin-top: 14px;
+    color: #1a6a3a;
+    font-weight: 600;
+}
+
+/* --------------------
+   FOOTER
+   -------------------- */
+footer {
+    padding: 28px 20px;
+    text-align: center;
+    color: white;
+    font-size: 0.95rem;
+    background: black;
+    margin-top: 40px;
+}
+
+/* --------------------
+   BOTÓN IR ARRIBA
+   -------------------- */
+#btn-arriba {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #fe0000;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* --------------------
+   RESPONSIVE
+   -------------------- */
+@media (max-width: 768px) {
+
+    /* Mostrar toggle */
+    #nav-toggle {
+        display: block;
+    }
+
+    /* Ocultar el menu horizontal */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: var(--nav-bg);
+        width: 100%;
+        padding: 12px 0;
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        gap: 0;
+    }
+
+    /* Cada item ocupa ancho completo */
+    nav ul li {
+        width: 100%;
+    }
+    nav ul li a {
+        padding: 14px 20px;
+        display: block;
+    }
+
+    /* Cuando el nav tiene la clase .nav-open mostramos el ul */
+    nav.nav-open ul {
+        display: flex;
+    }
+
+    /* Submenu en mobile — que aparezca dentro del flujo */
+    .submenu-items {
+        position: relative;
+        top: 0;
+        left: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+    .submenu-items li a {
+        padding-left: 36px; /* indent para diferenciar */
+    }
+
+    /* Reducir padding de secciones en mobile */
+    .seccion {
+        padding: 70px 16px;
+    }
+     /* HOVER ESPECIAL PARA RESPONSIVE 
+    nav ul li a:hover {
+        background-color: rgb(255, 0, 0); 
+        color: var(--nav-hover-text); /* 
+    }
+
+    /* Hover del submenú en responsive
+    .submenu-items li a:hover {
+        background-color: rgb(255, 0, 0);
+        padding-left: 40px;  /* 
+        transition: 0.2s;
+    }*/
+}
+.man {
+    height: 50px;
+    width: auto;
+    padding: 0%;
+}
